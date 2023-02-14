@@ -10,3 +10,19 @@ h2 {
     margin-top: 1em;
     padding-top: 1em;
 }
+
+th {
+    color: coral
+}
+h2.tables{
+    color: #333
+}
+
+#t1c1{
+    color: greenyellow
+}
+
+#t1c1:hover {
+    color: coral
+}
+
