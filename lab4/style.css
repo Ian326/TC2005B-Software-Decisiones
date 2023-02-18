@@ -1,0 +1,15 @@
+body{
+        color: #555;
+            margin: 0 auto;
+            max-width: 50em;
+            font-family: "Helvetica", "Arial", sans-serif;
+            line-height: 1.5;
+            padding: 2em 1em;
+}
+header{
+    text-align:center;
+    font-size: 250%;
+}
+table,th,td {
+    border: 1px solid;
+}
