@@ -1,9 +1,3 @@
-let r1;
-let r2;
-let d1;
-let d2;
-let z;
-
 function ex1(){
     let x = prompt('Ingresa un numero entero mayor a 0: ');
     var table = document.getElementById("Ex1");
@@ -20,12 +14,12 @@ function ex1(){
 };
 
 function ex2(){
-    r1 = Math.floor(Math.random() * 10);
-    r2 = Math.floor(Math.random() * 10);
-    z = r1+r2;
-    d1 = Date.now()
+    let r1 = Math.floor(Math.random() * 10);
+    let r2 = Math.floor(Math.random() * 10);
+    let z = r1+r2;
+    let d1 = Date.now()
     let x = prompt(r1 + " + " + r2 + " = ");
-    d2 = Date.now()
+    let d2 = Date.now()
     if (x == z) {
             alert("LoL. You're right. "  + "And it only took you: " + (d2-d1)/1000 + " seconds");
         }
