@@ -30,24 +30,28 @@ function ex2(){
 
 function ex3(){
     let breake = false;
-    let zero = 0, neg = 0, pos = 0; 
+    let zero = -1, neg = 0, pos = 0;
+    const array = [];
     while(breake == false){
         let x = prompt("Give me a number. Write x to continue")
-        if (x < 0) {
-            neg++       
-        }
-        else if (x == 0) {
-            zero++
-        }
-        else if (x > 0) {
-            pos++
-        }
-        else if (x == "x"){
+        if(x == "x"){
             breake = true;
         }
         else{
-            alert("Invalid input. Try again")
+            array.push(x);
         }
+    }
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] < 0) {
+            neg++
+        }
+        else if (array[i] == 0) {
+            zero++
+        }
+        else if (array[i] > 0) {
+            pos++
+        }
+        else{}
     }
     var table = document.getElementById("Ex3");
         var row = table.insertRow(1);
@@ -58,5 +62,50 @@ function ex3(){
         c2.innerHTML = zero;
         c3.innerHTML = pos;
     var table = document.getElementById("Ex3").style.display = "inline-table";
+}
 
+function ex4(){
+    let col, row;
+    alert("You're going to create a Matrix of random numbers")
+    breake = false;
+    while (breake == false) {
+        col = prompt("Write number of columns")
+        col = parseInt(col);
+        if (isNaN(col)){
+            alert("Invalid input.") 
+        }
+        else{
+            breake = true;
+        }
+    }
+    breake = false;
+    while (breake == false) {
+        row = prompt("Write number of rows")
+        row = parseInt(row);
+        if (isNaN(row)){
+            alert("Invalid input.") 
+        }
+        else{
+            breake = true;
+        }
+
+    }
+
+    const matrix = [];
+    var r = [];
+    var table = document.getElementById("Ex4");
+    
+    for (let i = 0; i < row; i++) {
+        var tRow = table.insertRow(i);
+        
+        for (let j = 0; j < col; j++) {
+            let rng = Math.floor(Math.random() * 100);
+            var tCol = tRow.insertCell(j);
+            tCol.innerHTML = rng;
+            r.push(rng);
+        }
+        matrix.push(r);
+        r = [];
+    }
+    document.getElementById("Ex4").style.display="inline-table";
 }
