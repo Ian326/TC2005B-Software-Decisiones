@@ -140,3 +140,29 @@ function ex4(){
     document.getElementById("Ex4Avgs").innerHTML="Average per row: " + avgs.toString();
     document.getElementById("Ex4Avgs").style.display="block";
 }
+
+function ex5(){
+    let number = 0;
+    let breake = false;
+    while(breake == false){
+        let x = prompt("Give me an integer greater than 9.")
+        x = parseInt(x);
+        if (isNaN(x)){
+            alert("NaN. Try Again.") 
+        }
+        else if(x<=9){
+            alert("Number is too small.");
+        }
+        else{
+            breake = true;
+            number = x.toString();
+        }
+    }
+    var flipped = number.split("");
+    flipped = flipped.reverse();
+    flipped = flipped.join("");
+    alert(number + " Flipped is: " + flipped)
+    document.getElementById("Ex5").innerHTML=number + " Flipped is: " + flipped;
+    document.getElementById("Ex5").style.display="block";
+
+}
