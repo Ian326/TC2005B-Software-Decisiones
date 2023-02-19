@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header><u><strong>Laboratorio 4:<br> Fundamentos de JavaScript<strong></strong></u></header>
+    <header><u><strong>Laboratorio 4:<br> Fundamentos de JavaScript</strong></u></header>
     
     <h2><strong>Exercise 1:</strong></h2>
     <button onclick="ex1()">Exponents</button> <br>
@@ -42,6 +42,68 @@
     <button onclick="ex5()">Flipped</button> <br>
     <p id="Ex5" style="display: none"></p>
     
+    <h2><strong>Preguntas:</strong></h2>
+    <strong>¿Qué diferencias y semejanzas hay entre Java y JavaScript? </strong>
+    <br><br> Entre algunas de las semejanzas que encuentro entre ambos
+    lenguajes veo que ambos son muy parecidos en sintaxis como C++. Investigando
+    un poco, me di cuenta que ambos están enfocados a programación orientada a objetos
+    a través de clases, objetos y herencia. Entre sus diferencias cabe destacar que
+    Java se utiliza para el desarrollo de programas, mientras que JavaScript está enfocado
+    en desarrollo Web. Además, Java es un entorno virtual, mientras que JS es Web. Finalmente
+    Java fue creado por 'Sun Microsystems' y JS por 'Netscape'.
+    <br><br>
+    <strong>¿Qué métodos tiene el objeto Date? (Menciona al menos 5*) </strong>
+    <ul>
+        <li>
+            toDateString(): Convierte la parte de la fecha de un objeto Date en texto
+        </li><br>
+        <li>
+            getDate(): Devuelve el día del mes (del 1 al 31)
+        </li><br>
+        <li>
+            getTime(): Devuelve el número de milisegundos desde la medianoche del 1 de enero de 1970 y una fecha especificada
+        </li><br>
+        <li>
+            getFullYear(): Devuelve el año
+        </li>
+        <li>
+            getMonth(): Devuelve el mes (del 0 al 11)
+        </li>
+        <li>
+            now(): Devuelve el número de milisegundos desde la medianoche del 1 de enero de 1970
+        </li>
+    </ul>
+    <strong>¿Qué métodos tienen los arreglos? (Menciona al menos 5*) </strong>
+    <ul>
+        <li>
+            toString(): convierte un arreglo en una string de sus valores (separados por comas).
+        </li><br>
+        <li>
+            pop(): Elimina el último valor del arreglo
+        </li><br>
+        <li>
+            shift(): Elimina el primer elemento de arreglo y recorre los demás una posición anterior
+        </li><br>
+        <li>
+            unshift(): Añade un elemento al inicio del arreglo y recorre los demás una posición posterior
+        </li>
+        <li>
+            lenght(): Devuelve el tamaño del arreglo
+        </li>
+        <li>
+            reverse(): Voltea el orden de los elementos dentro del arreglo, del último al primero
+        </li>
+    </ul>
+    <strong>¿Cómo se declara una variable con alcance local dentro de una función? </strong>
+    <br><br>
+    Se declara la variable dentro de la función con 'const','let','var'.
+    <br><br>
+    <strong>¿Qué implicaciones tiene utilizar variables globales dentro de funciones? </strong>
+    <br><br>
+    Es posible modificar las variables globales dentro de las funciones, pero también desde la página Web a través
+    de una consola. Uno de los beneficios que veo es que múltiples funciones pueden acceder al valor de una misma variable
+    al ser esta última 'global'
+
 
     <script src="functions.js"></script>
 </body>
