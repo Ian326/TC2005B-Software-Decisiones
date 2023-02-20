@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab1: Uso de HTML</title>
+    <link rel="stylesheet" href="css/materialize.css">
+</head>
+<body>
+    <header style="text-align:center; background-color: #000066; color: #fff">
+        Ian Joab Padrón Corona
+    </header>
+    <article>
+            <h2>
+                ¿Quién soy?
+            </h2>
+            <p>
+                Soy un Estudiante en el ITESM Campus Querétaro, estudio la carrera de ITC.
+                Tengo 20 años, soy originario de Querétaro.
+            </p>
+    </article>
+    <article>
+        <h2>
+            ¿En qué soy bueno?
+        </h2>
+        <p>
+            Creo que se me facilitan las materias de Ciencias en General (Matemáticas, Física, Química, Biología)
+            También soy bueno en comprensión. No tardo mucho en familiarizarme con temas nuevos.
+        </p>
+    </article>
+    <article>
+        <h2>
+            Mis gustos
+        </h2>
+        <p>
+            ・Estar 24/7 online, redes sociales, ver videos, juegos, etc. <br><br>
+            ・Dormir zzZ <br><br>
+            ・Me gustan las papitas (Sabritas, Ruffles, Doritos, etc) <br><br>
+            ・Armar computadoras/reparar laptops (en general, picarle/moverle a todo)
+        </p>
+    </article>
+    <article>
+        <h2>
+            <u>Preguntas de la actividad</u>
+            
+        </h2>
+        <p>
+            <strong>¿Cuál es la diferencia entre Internet y la World Wide Web?</strong>
+            <br><br> El internet es el medio, lo que implica a todas las computadoras contectadas entre sí. 
+            En cambio la World Wide Web son todas las páginas que existen dentro de esas computadoras para ser accedidas por
+            los usuarios.
+            <br><br><strong>¿Cuáles son las partes de un URL?</strong>
+            <br><br>Una URL se divide en varias secciones, entre ellas el Protocolo (como http://), el subdominio (ej. 'www'),
+            dominio (ej. 'google.com'), ruta (ej. /drive/u/0/),y finalmente el nombre y tipo del archivo (ej. '/index.html').
+            <br><br><strong>¿Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT, PATCH, DELETE?</strong>
+            <br>    
+                        <ul>
+                            <li>GET: Obtener información de un servidor en modo de lectura de datos</li><br>
+                            <li>HEAD: Similar a GET, obtiene información, pero sin arrojar una respuesta</li><br>
+                            <li>POST: Envía información, generando un cambio en el estado o datos del servidor</li><br>
+                            <li>PUT: Envía información que reemplaza todos los datos en el destino por el valor enviado</li><br>
+                            <li>PATCH: Aplica ciertas modificaciones al recurso obtenido</li><br>
+                            <li>DELTE: Borra un dato/recurso del servidor</li>
+                        </ul>
+        </p>
+        <p>
+            <strong>¿Qué método HTTP se debe utilizar al enviar un formulario HTML, por ejemplo cuando ingresas tu usuario y
+            contraseña en algún sitio? ¿Por qué?</strong>
+            <br><br>Se debe utilizar un método POST, para que no se pueda modificar y solo se compare con las credenciales registradas
+            para ingresar.
+            <br><br><strong>¿Qué método HTTP se utiliza cuando a través de un navegador web se accede a una página a través de un URL?</strong>
+            <br><br>Se utiliza el método GET, que reciba la información sobre ese sitio web y el mavegador pueda desplegarlo en
+            pantalla.
+            <br><br><strong>Un servidor web devuelve una respuesta HTTP con código 200. ¿Qué significa esto? ¿Ocurrió algún error?</strong>
+            <br><br>Significa que la operación se realizó sin problemas, ya sea el envío o recibo de datos.
+            <br><br><strong>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al
+            sitio y se encontró con un error 404? ¿Por qué?</strong>
+            <br><br>Sí, porque signfica que la página no ha sido encontrada, por lo que el desarrollador debe comprobar la conexión
+            y accesibilidad a la misma.
+            <br><br><strong>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al
+            sitio y se encontró con un error 500? ¿Por qué?</strong>
+            <br><br>Sí, porque el error 500 ocurre cuando se recibe una respuesta inesperada del servidor. Por lo que se tendría que
+            comprobar si existe alguna configuración deficiente en el acceso al servidor, permisos, etc.
+            <br><br><strong>¿Qué significa que un atributo HTML5 esté depreciado o desaprobado (deprecated)? Menciona algunos elementos
+            de HTML 4 que en HTML5 estén desaprobados.</strong>
+            <br><br>Que ese atributo ya no está disponible en la versión de HTML5, y que se reemplaza por alguno otro 
+            (por ejemplo con el uso de CS5). Ejemplos comunes son: "< image>:name", "< link>:target", "< html>:version".
+            <br><br><strong>¿Cuáles son las diferencias principales entre HTML4 y HTML5?</strong>
+            <ul>
+                <li>COMPATIBILIDAD:En las versiones más recientes de los navegadores, las páginas HTML4 puede que no se
+                    muestren correctamente
+                </li><br>
+                <li>MULTIMEDIA: Anteriormente en HTML4 se requería de usar Flash o Javascript para reproducir animaciones
+                    y ahora en HTML5, se puede hacer meramente con CSS
+                </li><br>
+                <li>
+                    ETIQUETAS: Anteriormente era común utilizar "< div id="etiqueta">" y ahora ya existen etiquetas "< header>"
+                    "< nav>", "< article>"
+                </li>
+            </ul>
+        </p>
+        <p>
+            <strong>¿Qué componentes de estructura y estilo tiene una tabla?</strong>
+            <ul>
+                <li>
+                    < table>: Define una tabla
+                </li><br>
+                <li>
+                    < th>: Define los encabezados de una tabla
+                </li><br>
+                <li>
+                    < tr>: Define una fila de una tabla
+                </li><br>
+                <li>
+                    < colgroup>: Selecciona un conjunto de columnas de la tabla 
+                </li><br>
+            </ul>
+        </p>
+        <p>
+            <strong>¿Cuáles son los principales controles de una forma HTML5?</strong>
+            <br><br> Según la página developer.mozilla.org, los controles básicos de forma HTML5 son:
+            <br> < form>, < fieldset>, < legend>, < textarea>, < label>, < button> & < input>
+            <br><br><strong>¿Qué tanto soporte HTML5 tiene el navegador que utilizas?</strong>
+            <br><br>Al momento de responder esta pregunta cuento con el navegador Google Chrome en su versión 110.0.5481.1,
+            por lo que es un 85.76% compatible con HTML5, de acuerdo a la página "http://html5test.com/".
+            <br><br><strong>¿Cuál es el ciclo de vida de los sistemas de información?</strong>
+            <ol>
+                <li>Investigación previa</li>
+                <li>Identificación de requerimientos</li>
+                <li>Diseño</li>
+                <li>Pruebas</li>
+                <li>Implementación</li>
+                <li>Mantenimiento</li>
+            </ol>
+        </p>
+        <p>
+            <strong>¿Cuál es el ciclo de desarrollo de sistemas de información?</strong>
+            <ol>
+                <li>Planificación</li>
+                <li>Creación</li>
+                <li>Pruebas</li>
+                <li>Despliegue de información</li>
+            </ol>
+        </p>
+    </article>
+    <footer style="text-align:center; background-color: #000066; color: #fff">
+        <br>
+        <a href="contacto.html">Ian Padrón Corona</a> at ITESM Campus Querétaro 2023 © 
+        <br>-<br>Webpage created using 
+        <a href="https://code.visualstudio.com/">Visual Studio Code</a> ^ u ^
+
+    </footer>
+</body>
+</html>
