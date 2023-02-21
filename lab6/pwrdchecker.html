@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab6: Programación orientada a eventos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+
+    <header><center>Password checker</center></header>
+    <br>
+    <article>
+        <form name="pwrds" onsubmit="return verifyPwrd()">
+            <td> Enter Password: ‎</td>
+            <input type="password" id="pwrd1" value="">
+            <br>
+            <td> Confirm Password: </td>
+            <input type="password" id="pwrd2" value="">
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+        <p id="Message" style="display: none">Hola</p>
+        <ul>
+            <li id="TBD_1" class="TBD">Password is at least 8 characters in length.</li>
+            <li id="TBD_2" class="TBD">Password has at least 1 number</li>
+            <li id="TBD_3" class="TBD">Password has at least 1 capital letter</li>
+            <li id="TBD_4" class="TBD">Password has at least 1 symbol</li>
+        </ul>
+
+    </article>
+    <article>
+        <h2>
+            <u>Preguntas de la actividad</u>
+        </h2>
+        <p><strong>¿Por qué es una buena práctica usar JavaScript para checar que sean válidos los inputs de las formas antes de
+                    enviar los datos al servidor?</strong></p>
+        Con el fin de que el servidor no tenga que lidiar con errores. Esto al momento de leer datos recibidos del cliente, 
+        debido a su tipo, longitud, comportamiento. Además de que pueda operar con la información adecuadamente.
+        <p><strong>¿Cómo puedes saltarte la seguridad de validaciones hechas con JavaScript?</strong></p>
+        Existen varias formas, dependiendo de lo que se desee 'saltar u omitir'. La forma más sencilla es deshabilitando la ejecución 
+        de JavaScript dentro del navegador, otra forma sería analizando el código de la página para saber qué acción desencadena qué evento
+        e invocar o redirigirse al evento sin la necesidad de pasar a través de la acción. Finalmente es desarrollando o implementando
+        scripts que directamente permitan bloquear o editar el comportamiento del scrip de una determinada página.
+        <p><strong>Si te puedes saltar la seguridad de las validaciones de JavaScript, entonces ¿por qué la primera pregunta
+                    dice que es una buena práctica?</strong></p>
+        Es una buena práctica porque, de ser bien implementada, le quita una carga de encima al servidor que maneja datos sensibles, Además
+        de que previene que usuarios malintencionados hagan de las suyas dentro de la página web y la información que se maneja.
+    </article>
+      
+    <footer><center>Ian Joab Padrón Corona - TC2005B at ITESM 2023</center></footer>
+    <script src="js.js"></script>
+</body>
+</html>
