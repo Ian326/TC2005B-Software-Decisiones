@@ -12,12 +12,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
-app.use('/inicio', (request, response, next) => {
-  response.render('index');
-});
+const labInicio = require('./routes/index_route');
+const labFaq = require('./routes/faq_route');
+app.use('/inicio',labInicio);
+app.use('/faq',labFaq);
 
 app.use((request, response, next) => {
-  response.render('404');
+  response.render('404', {
+        titulo: 'E404',
+    });
 });
 
 app.listen(3000, () => {
