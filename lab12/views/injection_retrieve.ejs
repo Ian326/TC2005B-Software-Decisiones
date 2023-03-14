@@ -1,0 +1,18 @@
+<%- include('includes/header.ejs') %>
+    <div class="block">
+    </div>
+    <article class="message">
+        <div class="message-header">
+            <p>Datos enviados al Servidor:</p>
+        </div>
+        <div class="message-body">
+            <ul>
+                <strong>Texto: </strong> <%= randText %>
+            </ul>
+        </div>
+    </article>
+            <div class="block">
+                <a class="button is-link is-outlined" href="/injection" type="submit" name="action">Regresar
+                </a>
+            </div>
+<%- include('includes/footer.ejs') %>

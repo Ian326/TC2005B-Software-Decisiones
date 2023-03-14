@@ -14,8 +14,10 @@ app.set('views', 'views');
 
 const labInicio = require('./routes/index_route');
 const labFaq = require('./routes/faq_route');
+const labInjection = require('./routes/injection_route');
 app.use('/inicio',labInicio);
 app.use('/faq',labFaq);
+app.use('/injection',labInjection);
 
 app.use((request, response, next) => {
   response.render('404', {
