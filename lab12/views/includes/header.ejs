@@ -3,35 +3,50 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <title>
-        Hola
+        Lab12
     </title>
     <style>
-        body {
-            display: flex;
-            min-height: 100vh;
-            flex-direction: column;
+        header{
+            text-align:center;
+            font-size: 250%;
         }
-    
-        main {
-            flex: 1 0 auto;
-        }
-    
-        img {
-            width: 350px;
+        table,th,td {
+            border: 1px solid;
         }
     </style>
 </head>
 
-<body class="grey darken-4 white-text">
-    <nav>
-        <div class="nav-wrapper #9e9e9e grey">
-            <a href="/inicio/route" class="brand-logo">Holaa</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="/inicio/route">Página Principal</a></li>
-            </ul>
+<body>
+    <nav class="navbar is-black">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="https://github.com/Ian326/TC2005B-Software-Decisiones">
+                <img src="https://i.imgur.com/LYeJhna.png">
+            </a>
+        </div>
+        <div class="navbar-menu">
+            <div class="navbar-start">
+                    <a href="/inicio/" class="navbar-item">Inicio</a>
+                    <a href="/inicio/" class="navbar-item">Página Principal</a>
+            </div>
+
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <p class="control">
+                        <a class="bd-tw-button button" href="https://github.com/Ian326/TC2005B-Software-Decisiones">
+                            <span class="icon">
+                                <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png">
+                            </span>
+                            <span>
+                                Contacto
+                            </span>
+                        </a>
+                    </p>
+                </div>
+            </div>
         </div>
     </nav>
-    <main>
+    
+    <main class="bd-docs-main">
+        <div class="container">

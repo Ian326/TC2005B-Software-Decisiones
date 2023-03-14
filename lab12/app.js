@@ -16,11 +16,8 @@ app.use('/inicio', (request, response, next) => {
   response.render('index');
 });
 
-const mainRoute = require('./routes/routes');
-
-
 app.use((request, response, next) => {
-  response.status(404).send('<p>404 Page not Found</p>');
+  response.render('404');
 });
 
 app.listen(3000, () => {
