@@ -1,7 +1,7 @@
-const text = require('../models/text.model');
+const Text = require('../models/text.model');
 
 exports.get_injection = (request, response, next) => {
-    text.fetchAll()
+    Text.fetchAll()
     .then(([rows, fieldData]) => {
         response.render('injection', {
             titulo: 'POST al Server',
@@ -11,7 +11,7 @@ exports.get_injection = (request, response, next) => {
 
 exports.post_injection = (request, response, next) => {
 
-    const randText = new text({
+    const randText = new Text({
         randText: request.body.randText,
     });
 
@@ -33,14 +33,13 @@ exports.retrieve = (request, response, next) => {
 
     response.setHeader('Set-Cookie', 'consultas=' + consultas + '; HttpOnly');
 
-    let mensaje = '';
+    /*let mensaje = '';*/
 
     if (request.session.mensaje) {
-        mensaje = request.session.mensaje;
-        request.session.mensaje = '';
+        let mensaje = request.session.mensaje;
     }
 
-    text.fetchAll()
+    Text.fetchAll()
     .then(([rows, fieldData]) => {
         console.log(rows);
         

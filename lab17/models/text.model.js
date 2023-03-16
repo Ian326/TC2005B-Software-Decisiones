@@ -9,7 +9,7 @@ const db = require('../util/dbase');
 ];
 */
 
-module.exports = class text {
+module.exports = class Text {
     constructor(injection) {
         this.randText = injection.randText || '';
     }

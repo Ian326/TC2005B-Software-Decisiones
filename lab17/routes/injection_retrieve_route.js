@@ -1,9 +1,9 @@
-const text = require('../models/text.model');
+const Text = require('../models/text.model');
 const express = require('express');
 const router = express.Router();
 
 router.get('/', (request, response, next) => {
-    text.fetchAll()
+    Text.fetchAll()
     .then(([rows, fieldData]) => {
         console.log(rows);
         
@@ -11,7 +11,7 @@ router.get('/', (request, response, next) => {
                                             titulo: 'Users RandTexts', 
                                             randTextArray: rows,
                                             session_last_call: request.session.last_call || '',
-                                            mensaje: 'No has llegado aqui desde POST ;)'
+                                            mensaje: "Info added to database successfully."
                                         });
     })
     .catch(err => {
