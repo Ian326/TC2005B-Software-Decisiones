@@ -1,0 +1,19 @@
+{
+  "name": "lab13",
+  "version": "1.0.0",
+  "description": "TC2005 - Labb13",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "author": "Ian Padrón Corona",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.21",
+    "parser": "^0.1.4"
+  }
+}
