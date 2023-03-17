@@ -4,7 +4,7 @@ const router = express.Router();
 router.get('/', (request, response, next) => {
     console.log("Un usuario ha iniciado sesión");
     response.render('index', {
-        titulo: 'Lab14'
+        titulo: 'Lab17'
     });
 });
 module.exports = router;
