@@ -11,7 +11,9 @@ router.get('/', (request, response, next) => {
                                             titulo: 'Users RandTexts', 
                                             randTextArray: rows,
                                             session_last_call: request.session.last_call || '',
-                                            mensaje: "Info added to database successfully."
+                                            mensaje: "Info added to database successfully.",
+                                            isLoggedIn: request.session.isLoggedIn || false,
+                                            username: request.session.username || '',
                                         });
     })
     .catch(err => {

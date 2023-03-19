@@ -45,18 +45,39 @@
                         </a>
                     </p>
                 </div>
+                <% if(!isLoggedIn) { %>
+                    <div class="navbar-item">
+                        <p class="control">
+                            <a class="bd-tw-button button" href="/session/signup">
+                                <span class="icon">
+                                </span>
+                                <span>
+                                    SignUp
+                                </span>
+                            </a>
+                            <a class="bd-tw-button button" href="/session/login">
+                                <span class="icon">
+                                </span>
+                                <span>
+                                    LogIn
+                                </span>
+                            </a>
+                        </p>
+                    </div>
+                <% } %>
+                <% if(isLoggedIn) { %>
                 <div class="navbar-item has-dropdown is-hoverable">
                     <a class="navbar-link">
                         <span class="icon">
-                            <img src="https://assets.stickpng.com/thumbs/585e4beacb11b227491c3399.png">
+                            <img src="https://i.imgur.com/5iWqvac.png">
                         </span>
                         <span>
-                              Usuario
+                            <%- username %>
                         </span>
                     </a>
                 
                     <div class="navbar-dropdown">
-                        <a href="/private/u" class="button is-danger is-outlined">
+                        <a href="/session/logout" class="button is-danger is-outlined">
                             Cerrar Sesión
                         </a>
                     </div>
@@ -64,6 +85,7 @@
                 <div class="navbar-item">
 
                 </div>
+                <% } %>
             </div>
         </div>
     </nav>

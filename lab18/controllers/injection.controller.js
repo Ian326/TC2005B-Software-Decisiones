@@ -5,6 +5,8 @@ exports.get_injection = (request, response, next) => {
     .then(([rows, fieldData]) => {
         response.render('injection', {
             titulo: 'POST al Server',
+            isLoggedIn: request.session.isLoggedIn || false,
+            username: request.session.username || '',
         });
     }).catch(error => console.log(error));
 };
@@ -13,6 +15,7 @@ exports.post_injection = (request, response, next) => {
 
     const randText = new Text({
         randText: request.body.randText,
+        user: request.session.username
     });
 
     randText.save()
@@ -47,7 +50,9 @@ exports.retrieve = (request, response, next) => {
                                             titulo: 'Users RandTexts', 
                                             randTextArray: rows,
                                             session_last_call: request.session.last_call || '',
-                                            mensaje: mensaje
+                                            mensaje: mensaje,
+                                            isLoggedIn: request.session.isLoggedIn || false,
+                                            username: request.session.username || '',
                                         });
     })
     .catch(err => {
