@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const csrf = require('csurf');
 const isAuth = require('./util/is_auth');
+const multer = require('multer');
 
 const app = express();
 
@@ -16,6 +17,20 @@ app.use(session({
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(bodyParser.urlencoded({ extended: false }));
+
+const fileStorage = multer.diskStorage({
+    destination: (request, file, callback) => {
+        //'uploads': Es el directorio del servidor donde se subirán los archivos 
+        callback(null, 'public/uploads');
+    },
+    filename: (request, file, callback) => {
+        //aquí configuramos el nombre que queremos que tenga el archivo en el servidor, 
+        //para que no haya problema si se suben 2 archivos con el mismo nombre concatenamos el timestamp
+        callback(null, new Date().getMilliseconds() + '-' + file.originalname);
+    },
+});
+
+app.use(multer({ storage: fileStorage }).single('randImage')); 
 
 app.set('view engine', 'ejs');
 app.set('views', 'views');
@@ -34,13 +49,15 @@ const labFaq = require('./routes/faq_route');
 const labInjection = require('./routes/injection_route');
 const labRetrieve = require('./routes/injection_retrieve_route');
 const labUsrs = require('./routes/users_route');
+const labUpload = require('./routes/upload');
 
 app.use('/inicio', isAuth, labInicio);
 app.use('/faq', isAuth, labFaq);
 app.use('/injection', isAuth, labInjection);
 app.use('/injection_retrieve', isAuth, labRetrieve);
+app.use('/upload', isAuth, labUpload);
+app.use('/image_retrieve', isAuth, labUpload);
 app.use('/session', labUsrs);
-
 
 app.use((request, response, next) => {
   response.render('404', {

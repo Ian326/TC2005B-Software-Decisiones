@@ -9,6 +9,4 @@ router.post('/', injectionController.post_injection);
 
 router.get('/', injectionController.retrieve);
 
-//router.get('/', injectionController.retrieve);
-
 module.exports = router;
