@@ -30,7 +30,17 @@ const fileStorage = multer.diskStorage({
     },
 });
 
-app.use(multer({ storage: fileStorage }).single('randImage')); 
+const fileFilter = (request, file, callback) => {
+    if (file.mimetype == 'image/png' || 
+        file.mimetype == 'image/jpg' ||
+        file.mimetype == 'image/jpeg' ) {
+            callback(null, true);
+    } else {
+            callback(null, false);
+    }
+}
+
+app.use(multer({ storage: fileStorage, fileFilter: fileFilter }).single('randImage')); 
 
 app.set('view engine', 'ejs');
 app.set('views', 'views');
