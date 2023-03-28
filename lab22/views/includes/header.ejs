@@ -1,0 +1,94 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>
+        <%- titulo %>
+    </title>
+    <style>
+        header{
+            text-align:center;
+            font-size: 250%;
+        }
+        table,th,td {
+            border: 1px solid;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar is-black">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="https://github.com/Ian326/TC2005B-Software-Decisiones">
+                <img src="https://i.imgur.com/LYeJhna.png">
+            </a>
+        </div>
+        <div class="navbar-menu">
+            <div class="navbar-start">
+                    <a href="/inicio/" class="navbar-item">Inicio</a>
+                    <a href="/faq/" class="navbar-item">FAQ</a>
+                    <a href="/injection/" class="navbar-item">POST</a>
+            </div>
+
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <p class="control">
+                        <a class="bd-tw-button button" href="https://github.com/Ian326/TC2005B-Software-Decisiones">
+                            <span class="icon">
+                                <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png">
+                            </span>
+                            <span>
+                                Contacto
+                            </span>
+                        </a>
+                    </p>
+                </div>
+                <% if(!isLoggedIn) { %>
+                    <div class="navbar-item">
+                        <p class="control">
+                            <a class="bd-tw-button button" href="/session/signup">
+                                <span class="icon">
+                                </span>
+                                <span>
+                                    SignUp
+                                </span>
+                            </a>
+                            <a class="bd-tw-button button" href="/session/login">
+                                <span class="icon">
+                                </span>
+                                <span>
+                                    LogIn
+                                </span>
+                            </a>
+                        </p>
+                    </div>
+                <% } %>
+                <% if(isLoggedIn) { %>
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                        <span class="icon">
+                            <img src="https://i.imgur.com/5iWqvac.png">
+                        </span>
+                        <span>
+                            <%- username %>
+                        </span>
+                    </a>
+                
+                    <div class="navbar-dropdown">
+                        <a href="/session/logout" class="button is-danger is-outlined">
+                            Cerrar Sesión
+                        </a>
+                    </div>
+                </div>
+                <div class="navbar-item">
+
+                </div>
+                <% } %>
+            </div>
+        </div>
+    </nav>
+    
+    <main class="bd-docs-main">
+        <div class="container">
