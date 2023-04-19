@@ -27,15 +27,18 @@ const fileStorage = multer.diskStorage({
         //aquí configuramos el nombre que queremos que tenga el archivo en el servidor, 
         //para que no haya problema si se suben 2 archivos con el mismo nombre concatenamos el timestamp
         callback(null, new Date().getMilliseconds() + '-' + file.originalname);
-    },
+    }
 });
 
 const fileFilter = (request, file, callback) => {
+    
     if (file.mimetype == 'image/png' || 
         file.mimetype == 'image/jpg' ||
         file.mimetype == 'image/jpeg' ) {
             callback(null, true);
-    } else {
+    }
+    
+    else {
             callback(null, false);
     }
 }

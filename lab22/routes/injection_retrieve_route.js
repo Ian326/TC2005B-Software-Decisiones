@@ -5,8 +5,6 @@ const router = express.Router();
 router.get('/', (request, response, next) => {
     Text.fetchAll()
     .then(([rows, fieldData]) => {
-        console.log(rows);
-        
         response.render('injection_retrieve',{
                                             titulo: 'Users RandTexts', 
                                             randTextArray: rows,

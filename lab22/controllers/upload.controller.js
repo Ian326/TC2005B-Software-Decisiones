@@ -25,7 +25,6 @@ exports.post_image = (request, response, next) => {
         response.redirect('/image_retrieve/all');
     })
     .catch((error) => {console.log(error)});
-    
 };
 
 exports.retrieve = (request, response, next) => {
