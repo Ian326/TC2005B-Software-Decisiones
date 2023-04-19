@@ -1,0 +1,22 @@
+<%- include('includes/header.ejs') %>
+    <div class="hero-body">
+        <div class="block">
+            <div class="container">
+                <h2 class="title algolia-lvl0">Subir una imagen a la Galería</h2>
+            </div>
+        </div>
+        <div class="content">
+            <form action="/upload" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <div>
+                    <div style="display: flex; justify-content: center;">
+                        <input id="randImage" class="button is-large" type="file" name="randImage">
+                    </div>
+                    <div style="display: flex; justify-content: center;">
+                        <button class="button is-link is-outlined" type="submit" name="action">Upload!</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+<%- include('includes/footer.ejs') %>

@@ -1,0 +1,18 @@
+<%- include('includes/header.ejs') %>
+    <div class="hero-body">
+        <div class="block">
+            <div class="container">
+                <h2 class="title algolia-lvl0">POST Request al Server</h2>
+            </div>
+        </div>
+        <div class="content">
+            <form action="/injection" method="POST">
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <div class="control">
+                    <input class="input" id="randText" name="randText" type="text" placeholder="Escribe cualquier cosa">
+                </div>
+                <button class="button is-link is-outlined" type="submit" name="action">POST!</button>
+            </form>
+        </div>
+    </div>
+<%- include('includes/footer.ejs') %>

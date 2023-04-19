@@ -1,0 +1,11 @@
+npm init
+npm install express
+npm install express-session
+npm install body-parser
+npm install ejs
+npm install nodemon
+npm install bcryptjs
+npm install mysql2
+npm install csurf
+npm install multer
+
