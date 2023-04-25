@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-04-2023 a las 06:42:06
+-- Tiempo de generación: 25-04-2023 a las 06:12:18
 -- Versión del servidor: 10.4.27-MariaDB
--- Versión de PHP: 8.0.25
+-- Versión de PHP: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -42,7 +42,8 @@ INSERT INTO `usercomments` (`idUser`, `userName`, `textSent`) VALUES
 (2, 'Anonymous', 'asdasda'),
 (3, 'Ian326', 'Hola mundo! :)'),
 (4, 'Anonymous', 'hola'),
-(5, 'Ian326', ':P');
+(5, 'Ian326', ':P'),
+(6, 'diego@gmail.com', 'Hola mundo');
 
 -- --------------------------------------------------------
 
@@ -61,7 +62,8 @@ CREATE TABLE `userimages` (
 --
 
 INSERT INTO `userimages` (`idUser`, `userName`, `imageSent`) VALUES
-(1, 'Ian326', '720-PP_MinecraftSkin7.png');
+(1, 'Ian326', '720-PP_MinecraftSkin7.png'),
+(7, 'Ian326', '146-Xayah_Emote.png');
 
 -- --------------------------------------------------------
 
@@ -135,13 +137,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `usercomments`
 --
 ALTER TABLE `usercomments`
-  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `userimages`
 --
 ALTER TABLE `userimages`
-  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `users`

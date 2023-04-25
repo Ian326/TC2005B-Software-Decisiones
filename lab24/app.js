@@ -77,6 +77,7 @@ app.use((request, response, next) => {
         titulo: 'E404',
         isLoggedIn: request.session.isLoggedIn || false,
         username: request.session.username || '',
+        permisos: request.session.privilegios || {}
     });
 });
 
