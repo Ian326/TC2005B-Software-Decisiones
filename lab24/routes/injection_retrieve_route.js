@@ -1,21 +1,6 @@
-const Text = require('../models/text.model');
 const express = require('express');
 const router = express.Router();
+const injectionController = require('../controllers/injection.controller.js');
 
-router.get('/', (request, response, next) => {
-    Text.fetchAll()
-    .then(([rows, fieldData]) => {
-        response.render('injection_retrieve',{
-                                            titulo: 'Users RandTexts', 
-                                            randTextArray: rows,
-                                            session_last_call: request.session.last_call || '',
-                                            mensaje: "Info added to database successfully.",
-                                            isLoggedIn: request.session.isLoggedIn || false,
-                                            username: request.session.username || '',
-                                        });
-    })
-    .catch(err => {
-        console.log(err);
-    });
-});
+router.get('/', injectionController.retrieve);
 module.exports = router;

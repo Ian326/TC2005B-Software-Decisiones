@@ -1,14 +1,5 @@
 const db = require('../util/dbase');
 
-/*const texts = 
-[
-    {
-        randText: "Este es el primer comentario"
-    }
-    
-];
-*/
-
 module.exports = class Text {
     constructor(injection) {
         this.randText = injection.randText || '';

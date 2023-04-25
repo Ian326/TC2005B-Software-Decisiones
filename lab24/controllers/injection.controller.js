@@ -28,7 +28,14 @@ exports.post_injection = (request, response, next) => {
     
 };
 
-exports.retrieve = (request, response, next) => {
+exports.retrieve = async (request, response, next) => {
+
+    let mensaje = '';
+
+    if (request.session.mensaje != '') {
+        mensaje = request.session.mensaje;
+        request.session.mensaje = '';
+    }
 
     let cookies = request.get('Cookie') || '';
     let consultas = cookies.split(';')[0].split('=')[1] || 0;
@@ -36,28 +43,22 @@ exports.retrieve = (request, response, next) => {
 
     response.setHeader('Set-Cookie', 'consultas=' + consultas + '; HttpOnly');
 
-    /*let mensaje = '';*/
+    const texts = await Text.fetchAll()
 
-    if (request.session.mensaje) {
-        let mensaje = request.session.mensaje;
-    }
-
-    Text.fetchAll()
-    .then(([rows, fieldData]) => {
-        console.log(rows);
-        
+    try{
         response.render('injection_retrieve',{
-                                            titulo: 'Users RandTexts', 
-                                            randTextArray: rows,
-                                            session_last_call: request.session.last_call || '',
-                                            mensaje: mensaje,
-                                            isLoggedIn: request.session.isLoggedIn || false,
-                                            username: request.session.username || '',
-                                        });
-    })
-    .catch(err => {
-        console.log(err);
-    });
+
+            titulo: 'Users RandTexts', 
+            randTextArray: texts[0],
+            session_last_call: request.session.last_call || '',
+            mensaje: mensaje || '',
+            isLoggedIn: request.session.isLoggedIn || false,
+            username: request.session.username || '',
+        });
+    }
+    catch(error) {
+        console.log(error);
+    };
 
     
 }
