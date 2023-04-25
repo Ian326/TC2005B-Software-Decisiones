@@ -6,8 +6,27 @@
             </div>
         </div>
         <div class="block">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum cumque dolore numquam nulla, officia laboriosam
-            mollitia commodi non, voluptatum voluptates minima pariatur vitae facilis? Fugiat laborum ut accusamus ea nulla?
+            <div class="content">
+                <ul>
+                    <li>
+                        En la sección <strong>FAQ</strong> puedes ver las preguntas de este laboratorio.
+                    </li>
+                    <li>
+                        En la sección <strong>POST</strong> puedes subir texto random al sitio web.
+                    </li>
+                    <li>
+                        En la sección <strong>User Comments!</strong> puedes ver (y buscar) los textos que han subido todos los usuarios.
+                    </li>
+                    <li>
+                        En la sección <strong>User Images!</strong> puedes ver las imágenes subidas al sitio web.
+                    </li>
+                    <% if(permisos.uploadImages && permisos.uploadImages==1) { %>
+                        <li>
+                            Administrador, en la sección <strong>Upload</strong> puedes subir imágenes para que todos las vean.
+                        </li>
+                     <% } %>
+                </ul>
+            </div>
         </div>
     </div>
 <%- include('includes/footer.ejs') %>
