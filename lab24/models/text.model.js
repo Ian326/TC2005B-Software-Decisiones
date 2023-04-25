@@ -20,4 +20,13 @@ module.exports = class Text {
             `
         );
     }
+
+    static find(valorBusqueda) {
+        return db.execute(`
+            SELECT *
+            FROM usercomments
+            WHERE (userName LIKE ? OR textSent LIKE ?)
+        `, [ '%' + valorBusqueda + '%', '%' + valorBusqueda + '%', ]
+        );
+    }
 }

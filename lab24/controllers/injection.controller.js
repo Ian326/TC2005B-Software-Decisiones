@@ -64,3 +64,17 @@ exports.retrieve = async (request, response, next) => {
 
     
 }
+
+exports.search = (request, response, next) => {
+
+  Text.find(request.params.valorBusqueda)
+  .then(([rows]) => {
+        response.status(200).json({results: rows});
+    })
+
+  .catch(error => {
+      console.log(error);
+      response.status(500).json({message: "Internal Server Error"});
+  });
+
+};
