@@ -10,6 +10,14 @@ router.get('/', uploadController.get_image);
 router.post('/', uploadController.post_image);
 
 router.get('/all', (request, response, next) => {
+
+    let mensaje = '';
+
+    if (request.session.mensaje != '') {
+        mensaje = request.session.mensaje;
+        request.session.mensaje = '';
+    }
+
     Image.fetchAll()
     .then(([rows, fieldData]) => {
         console.log(rows);
@@ -17,7 +25,7 @@ router.get('/all', (request, response, next) => {
         response.render('image_retrieve',{
                                             titulo: 'Users RandImages', 
                                             randImageArray: rows,
-                                            mensaje: "Image added to database successfully.",
+                                            mensaje: mensaje || '',
                                             isLoggedIn: request.session.isLoggedIn || false,
                                             username: request.session.username || '',
                                             permisos: request.session.privilegios || {}
