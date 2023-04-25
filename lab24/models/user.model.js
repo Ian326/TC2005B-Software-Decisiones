@@ -25,4 +25,12 @@ module.exports = class User {
             WHERE userName = ?
         `, [username]);
     }
+
+    static fetchPermissions(user_Name) {
+        return db.execute(`
+            SELECT uploadImages, uploadText, viewImages, viewText
+            FROM userprivileges
+            WHERE userprivileges.userName = ?
+        `, [user_Name]);
+    }
 }

@@ -6,6 +6,7 @@ router.get('/', (request, response, next) => {
         isLoggedIn: request.session.isLoggedIn || false,
         username: request.session.username || '',
         titulo: 'FAQ',
+        permisos: request.session.privilegios || {}
     });
 });
 module.exports = router;

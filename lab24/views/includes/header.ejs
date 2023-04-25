@@ -31,7 +31,9 @@
                     <a href="/homepage/" class="navbar-item">Inicio</a>
                     <a href="/faq/" class="navbar-item">FAQ</a>
                     <a href="/injection/" class="navbar-item">POST</a>
-                    <a href="/upload/" class="navbar-item">Upload</a>
+                    <% if(permisos.uploadImages && permisos.uploadImages==1) { %>
+                        <a href="/upload/" class="navbar-item">Upload</a>
+                    <% } %>
                     <a href="/injection_retrieve/" class="navbar-item">User Comments!</a>
             </div>
 

@@ -7,6 +7,7 @@ exports.get_injection = (request, response, next) => {
             titulo: 'POST al Server',
             isLoggedIn: request.session.isLoggedIn || false,
             username: request.session.username || '',
+            permisos: request.session.privilegios || {}
         });
     }).catch(error => console.log(error));
 };
@@ -54,6 +55,7 @@ exports.retrieve = async (request, response, next) => {
             mensaje: mensaje || '',
             isLoggedIn: request.session.isLoggedIn || false,
             username: request.session.username || '',
+            permisos: request.session.privilegios || {}
         });
     }
     catch(error) {

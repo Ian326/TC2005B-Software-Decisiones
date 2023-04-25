@@ -7,6 +7,7 @@ exports.get_image = (request, response, next) => {
             titulo: 'Subir img al Server',
             isLoggedIn: request.session.isLoggedIn || false,
             username: request.session.username || '',
+            permisos: request.session.privilegios || {}
         });
     }).catch(error => console.log(error));
 };
@@ -50,6 +51,7 @@ exports.retrieve = (request, response, next) => {
                                             mensaje: mensaje,
                                             isLoggedIn: request.session.isLoggedIn || false,
                                             username: request.session.username || '',
+                                            permisos: request.session.privilegios || {}
                                         });
     })
     .catch(err => {

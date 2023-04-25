@@ -20,6 +20,7 @@ router.get('/all', (request, response, next) => {
                                             mensaje: "Image added to database successfully.",
                                             isLoggedIn: request.session.isLoggedIn || false,
                                             username: request.session.username || '',
+                                            permisos: request.session.privilegios || {}
                                         });
     })
     .catch(err => {
