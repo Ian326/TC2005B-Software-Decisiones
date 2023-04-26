@@ -7,52 +7,44 @@
         </div>
         <div class="block">
 
-            <h2 class="title algolia-lvl0">¿Qué importancia tiene AJAX en el desarrollo de RIA's (Rich Internet Applications)?</h2>
+            <h2 class="title algolia-lvl0">¿Qué ventajas y desventajas tiene la integración de tus aplicaciones web con servicios web desarrollados por terceros?</h2>
             
             <div class="content">
+                Nota: API = Application programming interface.
+                <br><br>
+                <strong>Ventajas:</strong>
+                <ul>
+                    <li>
+                        Aceleración del desarrollo: Permite no tener que crear desde cero todas las funcionalidades necesarias en una aplicación. En lugar de
+                        ello, es posible utilizar servicios existentes que ya han sido probados y optimizados.
+                    </li>
+                    <li>
+                        Mejora de la calidad: Como la API a menudo se especializan en ciertas áreas específicas, al integrar estos servicios en una aplicación, se
+                        puede mejorar la calidad y funcionalidad de la aplicación.
+                    </li>
+                    <li>
+                        Actualizaciones automáticas: Es común que los servicios web de terceros se actualizan automáticamente, lo que significa que
+                        los desarrolladores no tienen que preocuparse por mantener y actualizar continuamente las funcionalidades que integran
+                        en su aplicación.
+                    </li>
+                </ul>
                 
-                Permite que las aplicaciones web interactúen con el servidor en segundo plano, sin tener que recargar toda la página
-                cada vez que se hace una solicitud al servidor. <br>
-                Esto permite a las aplicaciones web responder más rápidamente a las acciones del usuario y proporcionar una
-                experiencia de usuario más fluida y responsiva.
-
-            </div>
-
-        </div>
-
-        <div class="block">
-
-            <h2 class="title algolia-lvl0">¿Qué implicaciones de seguridad tiene AJAX? ¿Dónde se deben hacer las validaciones de seguridad, del lado del
-            cliente o del lado del servidor?</h2>
-           
-            <div class="content">
-
-                Una de las principales preocupaciones de seguridad con AJAX es la posibilidad de ataques de Cross-Site Scripting (XSS),
-                donde los atacantes pueden insertar código malicioso en la página web a través de entradas de usuario y permitir al atacante 
-                robar datos de sesión, controlar la cuenta de un usuario, o realizar otras acciones maliciosas.
-                <br>
-                Las validaciones de seguridad, se deben hacer en ambos lados, tanto del lado del cliente como del lado del servidor. Las
-                validaciones del lado del cliente pueden mejorar la experiencia del usuario al dar respuestas más rápidas sin la espera
-                del servidor, mientras que las validaciones del lado del servidor aseguran de que los datos enviados por el cliente 
-                sean seguros y cumplan con las reglas de negocio.
-
-            </div>
-        </div>
-
-        <div class="block">
-
-            <h2 class="title algolia-lvl0">¿Qué es JSON?</h2>
-
-            JSON (JavaScript Object Notation) se basa en un subconjunto del lenguaje de programación JavaScript y es un formato de texto que es fácil de analizar y
-            generar para cualquier lenguaje de programación.
-            
-            JSON se utiliza comúnmente para enviar y recibir datos entre una aplicación web y un servidor. Los datos se organizan en
-            objetos y matrices, y se pueden utilizar cadenas, números, booleanos y valores nulos. Los objetos se definen como pares
-            clave-valor, donde la clave es una cadena y el valor puede ser cualquier tipo de datos JSON válido.
-
-            <div class="content">
-
-
+                <strong>Desventajas:</strong>
+                <ul>
+                    <li>
+                        Dependencia externa: Se crea una dependencia externa. Si el servicio web
+                        se cae o se desactiva, la aplicación puede verse afectada.
+                    </li>
+                    <li>
+                        Control limitado: Los desarrolladores pueden tener un control limitado sobre la
+                        funcionalidad y el rendimiento. Si el servicio web cambia de alguna manera, puede afectar negativamente a la aplicación.
+                    </li>
+                    <li>
+                        Problemas de seguridad: La integración con servicios web de terceros también puede aumentar los riesgos de seguridad de
+                        la aplicación, ya que se están compartiendo datos con terceros y puede haber vulnerabilidades en la interfaz de
+                        programación de aplicaciones (API) utilizada para la integración.
+                    </li>
+                </ul>
 
             </div>
 

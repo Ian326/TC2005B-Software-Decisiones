@@ -2,13 +2,36 @@
     <div class="hero-body">
         <div class="block">
             <div class="container">
-                <h1 class="title algolia-lvl0">Sabías que...</h1>
+                <h1 class="title algolia-lvl0">Did you know...</h1>
             </div>
         </div>
         <div class="block">
+            <div class="block">
+                <div class="content">
+                    <h3 id="fact"></h3>
+                </div>
+            </div>
             <div class="content">
-                
+                <button class="button is-link is-outlined" type="submit" name="action" onclick="getQuote()">Generate</button>
             </div>
         </div>
     </div>
+    <script>
+        async function getQuote() {
+                fetch('https://api.api-ninjas.com/v1/facts?limit=1', {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-Api-Key': 'g3Tv8Lbi9vKRwauBtBMj+w==yrCGQ439r92J5ign'
+                    }
+                }).then(result => {
+                    return result.json();
+                }).then(data => {
+                    console.log("Data de la API")
+                    console.log(data[0].fact)
+                    document.getElementById('fact').innerHTML = data[0].fact;
+                })
+            }
+
+    </script>
 <%- include('includes/footer.ejs') %>
