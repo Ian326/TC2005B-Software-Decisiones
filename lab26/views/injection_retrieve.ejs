@@ -1,0 +1,148 @@
+<%- include('includes/header.ejs') %>
+
+    <% if (mensaje !='' ) { %>
+        <div class="notification is-info is-light">
+            <%= mensaje %>
+        </div>
+    <% } %>
+    
+    <br> <br>
+    <div id="search">
+        <input class="input" type="text" placeholder="Search" aria-label="Search" id="searchInput" name="searchInput"
+            onkeyup="ajax()">
+    </div>
+    
+    <div id="results">
+
+        <% if (randTextArray.length> 0) { %>
+            <% for (let text_element of randTextArray) { %>
+                <div class="block">
+                </div>
+                <article class="message">
+                    <div class="message-header">
+                        <p>Datos enviados al Servidor por: &lt;<%= text_element.userName %>&gt;</p>
+                    </div>
+                    <div class="message-body">
+                        <ul>
+                            <strong>Texto: </strong>
+                            <%= text_element.textSent %>
+                        </ul>
+                    </div>
+                </article>
+            <% } %>
+
+        <% } else { %>
+            <div class="block">
+            </div>
+            <article class="message">
+                <div class="message-header">
+                    <p>¡No hay datos enviados!</p>
+                </div>
+                <div class="message-body">
+                    <ul>
+                        <strong>Texto: ¿? </strong>
+                    </ul>
+                </div>
+            </article>
+         <% } %>
+
+    </div>
+    
+    <% if (session_last_call !='' ) { %>
+        <div class="notification is-link is-light">
+            This session last POST: <%= session_last_call %>
+        </div>
+    <% } %>
+
+    <div class="block">
+        <a class="button is-link is-outlined" href="/injection" type="submit" name="action">Regresar
+        </a>
+    </div>
+
+    <script>
+
+        async function ajax() {
+
+            const valorBusqueda = document.getElementById("searchInput").value;
+
+            const xhr = new XMLHttpRequest();
+
+            xhr.open('GET', '/injection_retrieve/' + valorBusqueda, true);
+
+            xhr.setRequestHeader('Content-Type', 'application/json');
+
+            xhr.onload = function () {
+
+                //console.log("XRH:")
+                //console.log(xhr)
+                //console.log("Response Text property of object XRH:")
+                //console.log(xhr.responseText)
+
+                if (xhr.status === 200) {
+
+                    try {
+
+                        const data = JSON.parse(xhr.responseText)
+
+                        let respuesta = "";
+
+                        if (data.results && data.results.length  > 0) {
+
+                            for (let textSent of data.results) {
+
+                                respuesta += '<div class="block">'
+                                respuesta += '</div >'
+
+                                respuesta += '<article class="message">'
+
+                                    respuesta += '<div class="message-header">'
+
+                                        respuesta += '<p>Datos enviados al Servidor por: &lt;' + textSent.userName + '&gt;</p>'
+                                    
+                                        respuesta += '</div>'
+                                    
+                                        respuesta += '<div class="message-body">'
+                                            
+                                            respuesta += '<ul>'
+
+                                                respuesta += '<strong> Texto: </strong>'
+                                                respuesta += textSent.textSent
+
+                                            respuesta += '</ul>'
+
+                                    respuesta += '</div>'
+                                respuesta += '</article>'
+                         
+                                    
+                            }
+                        }
+
+                        else {
+
+                            respuesta += "<h3>&nbsp&nbsp&nbspUsuario o Texto no encontrado.</h3>";
+                        }
+
+                        document.getElementById("results").innerHTML = respuesta;
+                    }
+
+                    catch(error) {
+
+                        console.log("Couldn't convert response into JSON.")
+                        console.log(error)
+
+                    }
+
+                }
+
+                else {
+
+                    console.log('Request failed.  Returned status of ' + xhr.status);
+                }
+            };
+
+            xhr.send();
+        }
+
+    </script>
+
+<%- include('includes/footer.ejs') %>

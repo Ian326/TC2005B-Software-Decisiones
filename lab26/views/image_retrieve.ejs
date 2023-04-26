@@ -1,0 +1,51 @@
+<%- include('includes/header.ejs') %>
+
+    <% if (mensaje != '' ) { %>
+        <div class="notification is-info is-light">
+            <%= mensaje %>
+        </div>
+    <% } %>
+    
+    <% if (randImageArray.length > 0) { %>
+        <% for (let image_element of randImageArray) { %>
+            <div class="block">
+            </div>
+            <div style="padding-left: 400px; padding-right: 400px">
+                <article class="message is-link">
+                    <div class="message-header" style="display: flex; justify-content: center;">
+                        <p>Imagen de: &lt;<%= image_element.userName %>&gt;</p>
+                    </div>
+                    <div class="message-body">
+                        <div class="card-image">
+                            <figure>
+                                <div style="display: flex; justify-content: center">
+                                    <img src="/uploads/<%= image_element.imageSent %>" style="width: 256px; height: 256px;"
+                                        alt="Placeholder image">
+                                </div>
+                            </figure>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        <% } %>
+    <% } else { %>
+        <div class="block">
+        </div>
+        <article class="message">
+            <div class="message-header">
+                <p>¡No hay imagenes!</p>
+            </div>
+            <div class="message-body">
+                <ul>
+                    <strong>¿? </strong>
+                </ul>
+            </div>
+        </article>
+    <% } %>
+    
+    <div class="block">
+        <a class="button is-link is-outlined" href="/upload" type="submit" name="action">Regresar
+        </a>
+    </div>
+
+<%- include('includes/footer.ejs') %>
